@@ -1,0 +1,13 @@
+#!/bin/bash
+echo "crerando bd";
+
+mysql -u root  << MYSQL
+                CREATE DATABASE IF NOT EXISTS alejo;
+                USE alejo;
+                SHOW DATABASES;
+		CREATE TABLE per(id int  primary key, nom varchar(20),apellido varchar(20),valor varchar(20));
+
+                SET GLOBAL local_infile=true;
+                LOAD DATA LOCAL INFILE '/home/kevinnarvaez/Daniel/lleno' INTO TABLE per  FIELDS TERMINATED BY ';' LINES TERMINATED BY '\n';
+
+MYSQL

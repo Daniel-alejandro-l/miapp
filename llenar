@@ -1,0 +1,18 @@
+BEGIN {FS=",";  nombre="-"; apellido="-"; valor="-";} 
+{
+    for(i=1;i<=NF; i++){
+          
+	if($2==""){
+   	          
+  	    $2=nombre;	
+         }      
+        if($3==""){
+            $3=apellido;
+       }
+        if($4==""){
+            $4=valor;
+       } 
+	 
+     }       
+     print $1";"$2";"$3";"$4
+}
