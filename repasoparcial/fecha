@@ -1,0 +1,16 @@
+BEGIN {FS=";"} {
+    fecha=$2;
+    dia=substr(fecha,1,2)
+   mes=substr(fecha,4,2)
+  anio=substr(fecha,7,4) 
+	 nuevo=anio "-" mes "-"dia
+         print nuevo
+
+
+
+
+
+
+}
+
+
